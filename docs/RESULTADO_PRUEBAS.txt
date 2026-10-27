@@ -1,0 +1,53 @@
+
+   PASS  Tests\Feature\SprintOneTest
+  ✓ login page and root redirect                                         0.17s  
+  ✓ guest cannot access protected pages with data set #0                 0.01s  
+  ✓ guest cannot access protected pages with data set #1                 0.01s  
+  ✓ guest cannot access protected pages with data set #2                 0.01s  
+  ✓ guest cannot access protected pages with data set #3                 0.01s  
+  ✓ guest cannot access protected pages with data set #4                 0.01s  
+  ✓ guest cannot access protected pages with data set #5                 0.01s  
+  ✓ guest cannot access protected pages with data set #6                 0.01s  
+  ✓ guest cannot access protected pages with data set #7                 0.01s  
+  ✓ active user can login with normalized email                          0.04s  
+  ✓ invalid login is rejected                                            0.21s  
+  ✓ inactive user cannot login                                           0.21s  
+  ✓ login is limited after five failures                                 1.02s  
+  ✓ logout removes access                                                0.01s  
+  ✓ deactivation revokes an existing session                             0.01s  
+  ✓ admin can open all main forms                                        0.04s  
+  ✓ worker can read clients and tables but not users                     0.03s  
+  ✓ client is restricted to own profile                                  0.02s  
+  ✓ client without association gets clear empty state                    0.01s  
+  ✓ worker cannot mutate tables or users by direct request               0.02s  
+  ✓ client cannot post new clients or users                              0.01s  
+  ✓ worker registers client with validated fields only                   0.01s  
+  ✓ client document and email must be unique                             0.01s  
+  ✓ client contact and required fields are validated                     0.01s  
+  ✓ client email is optional                                             0.01s  
+  ✓ client search filters and preserves query on pagination              0.04s  
+  ✓ client detail escapes user supplied markup                           0.01s  
+  ✓ client edit and delete are not exposed in sprint one                 0.01s  
+  ✓ admin can create update and delete a table                           0.03s  
+  ✓ table number is unique but can be kept on edit                       0.01s  
+  ✓ table fields reject out of range and missing values                  0.01s  
+  ✓ dashboard capacity counts only enabled tables                        0.01s  
+  ✓ admin creates account with hashed password                           0.02s  
+  ✓ invalid role and weak or unconfirmed password are rejected           0.01s  
+  ✓ account email must be unique after normalization                     0.01s  
+  ✓ admin can edit user without changing password                        0.02s  
+  ✓ admin can reset password and deactivate another user                 0.01s  
+  ✓ admin cannot deactivate or demote their own account                  0.01s  
+  ✓ admin can create and edit a client account with profile association  0.02s  
+  ✓ client profile cannot be assigned to two users and transaction roll… 0.01s  
+  ✓ non client role cannot be associated to a customer                   0.01s  
+  ✓ changing role removes client profile access                          0.01s  
+  ✓ demo seed is repeatable without resetting passwords                  0.05s  
+  ✓ unknown records return not found                                     0.02s  
+  ✓ password reset invalidates an existing session                       0.02s  
+  ✓ changed role applies to the next request                             0.02s  
+  ✓ password length is checked in bytes for bcrypt                       0.01s  
+
+  Tests:    47 passed (186 assertions)
+  Duration: 2.36s
+

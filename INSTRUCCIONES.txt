@@ -1,0 +1,26 @@
+PARCHE: FOTOS DE PRODUCTOS — LA BANDEJA PAISA
+
+1. Deten el servidor con Ctrl+C y guarda una copia de tu proyecto.
+2. Extrae este ZIP aparte. Copia app, public, database y tests dentro del proyecto donde estan artisan y preparar.php. Acepta combinar y reemplazar. El parche no contiene tu .env ni una base de datos.
+3. En la terminal de Visual Studio Code ejecuta, desde esa carpeta:
+
+& "C:\xampp\php\php.exe" artisan migrate
+& "C:\xampp\php\php.exe" artisan serve --host=127.0.0.1 --port=8000
+
+No uses migrate:fresh. La nueva migracion solo agrega un campo opcional, sin borrar tus datos.
+4. Abre http://127.0.0.1:8000 y pulsa Ctrl+Shift+R.
+5. Entra como administrador: Gestion > Productos > Registrar producto o Editar. Selecciona una foto, comprueba su vista previa y guarda.
+
+Permite JPG, PNG y WebP de hasta 5 MB y 4000x4000 px. Solo administrador puede cargar fotos. Al editar sin seleccionar otra imagen se conserva la actual. Para quitarla marca Quitar la foto actual. Subir una foto nueva reemplaza la anterior. Desactivar un producto no borra su foto.
+
+Si PHP limita las subidas a 2 MB, ajusta C:\xampp\php\php.ini:
+upload_max_filesize = 5M
+post_max_size = 8M
+Luego detén y vuelve a iniciar artisan serve.
+
+Las fotos se guardan en public/images/products, creada automaticamente al subir la primera. No requiere storage:link. Para respaldar tus datos copia tanto database/database.sqlite como public/images/products.
+
+Conserva los parches de CSRF, roles y Gestion ordenada. No requiere reinstalar Composer ni ejecutar preparar.php.
+
+Verificacion: sintaxis PHP y JavaScript revisada; prueba aislada JavaScript de multipart, metodo PUT, CSRF, imagen y alternativa ejecutada. Se agregan pruebas Laravel de carga, permisos, conservacion, reemplazo y eliminacion, pero no se ejecutaron aqui: no hay PHP disponible. Puedes ejecutarlas localmente con:
+& "C:\xampp\php\php.exe" artisan test --filter=RestaurantTest
